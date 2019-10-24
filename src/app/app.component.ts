@@ -302,7 +302,7 @@ export class AppComponent {
 
 
 
-    private findData() {
+    public findData() {
       const temp = this.quizData.find(element => {
         return String(element.code).toLowerCase() === String(this.codeField).toLowerCase();
       });
@@ -314,7 +314,7 @@ export class AppComponent {
       }
   }
 
-  private verify() {
+  public verify() {
     if (String(this.answerField).toLowerCase() === String(this.selectedData.answer).toLowerCase()) {
       this.state = 'b';
     } else {
@@ -322,7 +322,7 @@ export class AppComponent {
     }
   }
 
-  private refresh() {
+  public refresh() {
     this.state = 'fresh';
     this.answerField = undefined;
     this.codeField = undefined;
