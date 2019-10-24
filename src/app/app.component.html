@@ -1,0 +1,25 @@
+<div class="content">
+  <div class="banner"> DIWALI HUNT</div>
+  <div *ngIf="state == 'fresh'" class="prompt">Enter Code</div>
+  <div *ngIf="state == 'fresh'" class="text-field">
+      <input [(ngModel)]="codeField">
+  </div>
+  <div *ngIf="state == 'fresh'" class="submit">
+      <button (click)="findData()">Submit Code</button>
+  </div>
+  <div *ngIf="selectedData && (state == 'a' || state == 'b')" class="hint-text">{{selectedData.question}}</div>
+  <div *ngIf="selectedData && selectedData.image && (state == 'a' || state == 'b')" class="hint-image">
+    <img [src]="selectedData.image">
+  </div>
+  <div *ngIf="state == 'a'" class="text-field">
+      <input [(ngModel)]="answerField">
+  </div>
+  <div *ngIf="state == 'a'" class="submit">
+      <button (click)="verify()">Submit Answer</button>
+  </div>
+  <div *ngIf="selectedData && state == 'b'">Hint: {{selectedData.hint}}</div>
+  <div *ngIf="selectedData && state == 'b'">Card Id: {{selectedData.serial}}</div>
+  <div class="reset">
+      <button (click)=" refresh()">Reset</button>
+  </div>
+</div>
